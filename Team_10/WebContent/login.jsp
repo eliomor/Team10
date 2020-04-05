@@ -5,7 +5,7 @@
 
 <head>
 <meta charset="windows-1255">
-<title>Insert title here</title>
+<title>Login</title>
 </head>
 <body>
 	<form method="post" action="LoginCheck">
