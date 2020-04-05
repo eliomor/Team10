@@ -6,7 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import java.sql.*;
 /**
  * Servlet implementation class ProcessInfo
  */
@@ -35,10 +35,37 @@ public class ProcessInfo extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url ="/DisplayInfo.jsp";
-		String usersName = request.getParameter("name");
-		request.setAttribute("usersName", usersName);
+		String fname = request.getParameter("fname");
+		String lname = request.getParameter("lname");
+		String phone = request.getParameter("phone");
+		updateDB(fname,lname,phone);
+		Manager man = new Manager(fname,fname,phone);
+		
+		
+		request.setAttribute("usersName", man);
 		getServletContext()
 		.getRequestDispatcher(url)
 		.forward(request, response);
 	} 
+	
+	protected void updateDB(String fname,String lname,String phone) {
+		Connection con;
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			String url = "jdbc:mysql://localhost/test";
+			String user = "dbadmin";
+			String pw = "turtledove";
+			con = DriverManager.getConnection(url,user,pw);
+			Statement s = con.createStatement();
+			String query = "INSERT INTO MANAGER" + "(first_name, last_name, phone) " + 
+			"VALUES ('" + fname + "','" + lname + "','" + phone + ")";
+			s.executeUpdate(query);
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }

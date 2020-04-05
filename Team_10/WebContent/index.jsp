@@ -9,7 +9,11 @@
 <body>
 <h3>Enter some info</h3>
 <form action="ProcessInfo" method="post">
-<label>Name :</label>
+<label>First Name :</label>
+<input type="text" name="name"><br>
+<label>Last Name :</label>
+<input type="text" name="name"><br>
+<label>Phone :</label>
 <input type="text" name="name"><br>
 <input type="submit" value= "Send">
 </form>
