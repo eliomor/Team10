@@ -7,7 +7,7 @@
 <title>Hello</title>
 </head>
 <body>
-<h3>Thank you for the info</h3>
+<h3>Thank  for the info</h3>
 <label>First Name:</label>
 ${man.fname}<br>
 <label>Last Name:</label>
