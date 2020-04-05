@@ -2,6 +2,7 @@ package Meonot;
 
 import java.io.Serializable;
 
+
 public class Manager implements Serializable {
 	/**
 	 * 
