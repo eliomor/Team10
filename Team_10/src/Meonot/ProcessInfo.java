@@ -38,8 +38,10 @@ public class ProcessInfo extends HttpServlet {
 		String fname = request.getParameter("fname");
 		String lname = request.getParameter("lname");
 		String phone = request.getParameter("phone");
-		updateDB(fname,lname,phone);
-		Manager man = new Manager(fname,fname,phone);
+		String ID = request.getParameter("ID");
+		String Password = request.getParameter("Password");
+		updateDB(fname,lname,phone,ID,Password);
+		Manager man = new Manager(fname,fname,phone, ID, Password);
 		
 		
 		request.setAttribute("usersName", man);
@@ -48,7 +50,7 @@ public class ProcessInfo extends HttpServlet {
 		.forward(request, response);
 	} 
 	
-	protected void updateDB(String fname,String lname,String phone) {
+	protected void updateDB(String fname,String lname,String phone, String iD, String password) {
 		Connection con;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -57,8 +59,8 @@ public class ProcessInfo extends HttpServlet {
 			String pw = "turtledove";
 			con = DriverManager.getConnection(url,user,pw);
 			Statement s = con.createStatement();
-			String query = "INSERT INTO MANAGER" + "(first_name, last_name, phone) " + 
-			"VALUES ('" + fname + "','" + lname + "','" + phone + ")";
+			String query = "INSERT INTO MANAGER" + "(first_name, last_name, phone, ID ,Password) " + 
+			"VALUES ('" + fname + "','" + lname + "','" + phone + "','" + iD +"','" + password +")";
 			s.executeUpdate(query);
 		}
 		catch (ClassNotFoundException e) {
