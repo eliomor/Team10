@@ -1,11 +1,16 @@
 package Meonot;
 
 import java.io.IOException;
+import java.sql.*;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.Statement;
 import java.sql.*;
 /**
  * Servlet implementation class ProcessInfo
@@ -57,8 +62,8 @@ public class ProcessInfo extends HttpServlet {
 			String url = "jdbc:mysql://localhost/test";
 			String user = "dbadmin";
 			String pw = "turtledove";
-			con = DriverManager.getConnection(url,user,pw);
-			Statement s = con.createStatement();
+			con = (Connection) DriverManager.getConnection(url,user,pw);
+			Statement s = (Statement) con.createStatement();
 			String query = "INSERT INTO MANAGER" + "(first_name, last_name, phone, ID ,Password) " + 
 			"VALUES ('" + fname + "','" + lname + "','" + phone + "','" + iD +"','" + password +")";
 			s.executeUpdate(query);
