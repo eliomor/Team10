@@ -5,28 +5,43 @@
 <head>
 <meta charset="windows-1255">
 <title>Insert title here</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<form method="post" action="managePage.jsp">
-		<table>
-			<tr>
-				<td>User Name</td>
-				<td><input type="text" name="uname"></td>
-			</tr>
-			<tr>
-				<td>Password</td>
-				<td><input type="password" name="password"></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td><input type="submit" value="login"></td>
-			</tr>
-
-		</table>
-
-
-
-	</form>
-
+<form action="AccountController">
+<div class="container-fluid">
+	<div class="row">
+	
+		   <div class="col-md-3"></div>
+				
+		   <div class="col-md-6 col-sm-6 col-xs-12">
+			     <div class="jumbotron">
+				 		
+				 		<h1 class="text-center">Login Page</h1>
+				 	     <br>
+				 	     <p class="text-denger">${error}</p>
+				 	     <div class="form-group">
+				 	     	  <label class="control-Label" for="password">User Id:</label>
+				 	     	  <input type="text" name="username" class="form-control" placeholder="Input Id">		 	     
+				 	     </div>
+				 	     
+ 				 	     <div class="form-group">
+ 				 	     	  <label class="control-Label" for="password">Password:</label>
+				 	     	  <input type="password" name="password" class="form-control" placeholder="Input Password">
+ 				 	     </div>	 	
+ 				 	     <input type="checkbox" name="remember"> Remember Me?
+ 				 	     <br><br>
+ 				 	     <div class="pull-right">
+ 				 	   	 	 <button type="submit" class="btn btn-outline-warning">Login</button>
+ 				 	    	 <button type="reset" class="btn btn-outline-dark">Close</button>
+ 				 	     </div>     
+				 </div>
+	      </div>
+	      <div class="col-md-3"></div>	                                                                                                                                                                                                                                                               
+    </div>
+</div>  
+</form>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
 </body>
 </html>
