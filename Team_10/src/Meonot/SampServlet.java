@@ -37,7 +37,7 @@ public class SampServlet extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		try {
-			out.println("<h3>Elior The Gever</h3>");
+			out.println("<h3>Welcome</h3>");
 		}
 		finally {
 			out.close();

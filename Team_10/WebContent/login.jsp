@@ -8,7 +8,7 @@
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<form action="AccountController">
+<form method="post" action="ProcessInfo">
 <div class="container-fluid">
 	<div class="row">
 	
@@ -21,13 +21,13 @@
 				 	     <br>
 				 	     <p class="text-denger">${error}</p>
 				 	     <div class="form-group">
-				 	     	  <label class="control-Label" for="password">User Id:</label>
-				 	     	  <input type="text" name="username" class="form-control" placeholder="Input Id">		 	     
+				 	     	  <label class="control-Label" for="Password">User Id:</label>
+				 	     	  <input type="text" name="id" class="form-control" placeholder="Input Id">		 	     
 				 	     </div>
 				 	     
  				 	     <div class="form-group">
- 				 	     	  <label class="control-Label" for="password">Password:</label>
-				 	     	  <input type="password" name="password" class="form-control" placeholder="Input Password">
+ 				 	     	  <label class="control-Label" for="Password">Password:</label>
+				 	     	  <input type="Password" name="Password" class="form-control" placeholder="Input Password">
  				 	     </div>	 	
  				 	     <input type="checkbox" name="remember"> Remember Me?
  				 	     <br><br>
