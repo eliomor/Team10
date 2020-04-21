@@ -46,7 +46,7 @@ public class ProcessInfo extends HttpServlet {
 		String ID = request.getParameter("ID");
 		String Password = request.getParameter("Password");
 		updateDB(fname,lname,phone,ID,Password);
-		Manager man = new Manager(fname,fname,phone, ID, Password);
+		Manager man = new Manager(fname,fname,phone, ID, Password, Password, Password, Password);
 		
 		
 		request.setAttribute("usersName", man);
@@ -59,7 +59,7 @@ public class ProcessInfo extends HttpServlet {
 		Connection con;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			String url = "jdbc:mysql://localhost/test";
+			String url = "jdbc:mysql://localhost:3306/daycare";
 			String user = "dbadmin";
 			String pw = "turtledove";
 			con = (Connection) DriverManager.getConnection(url,user,pw);

@@ -8,7 +8,7 @@
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<form method="post" action="ProcessInfo">
+<form method="post" action="loginCheck.jsp">
 <div class="container-fluid">
 	<div class="row">
 	
