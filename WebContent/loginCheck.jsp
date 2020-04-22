@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%@page import=Meonot.ManagerDao %>
-<jsp:useBean id='man' class='Meonot.Manager'></jsp:useBean>
+<%@page import=meonot.ManagerDao %>
+<jsp:useBean id='man' class='meonot.Manager'></jsp:useBean>
 <jsp:setProperty property='prototype' name='man'/>
 <%
 String id=request.getParameter("id");

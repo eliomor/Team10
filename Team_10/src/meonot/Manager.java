@@ -1,4 +1,5 @@
-package Meonot;
+package meonot;
+
 
 import java.io.Serializable;
 

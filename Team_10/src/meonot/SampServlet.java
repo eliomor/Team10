@@ -1,4 +1,4 @@
-package Meonot;
+package meonot;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
